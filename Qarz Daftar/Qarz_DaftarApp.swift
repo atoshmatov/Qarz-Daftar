@@ -1,17 +1,14 @@
-//
-//  Qarz_DaftarApp.swift
-//  Qarz Daftar
-//
-//  Created by AToshmatov on 10/03/26.
-//
-
 import SwiftUI
 
 @main
 struct Qarz_DaftarApp: App {
+    @StateObject private var store = AppStore()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(store)
+                .preferredColorScheme(store.profile.selectedTheme.colorScheme)
         }
     }
 }
